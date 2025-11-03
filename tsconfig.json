@@ -1,0 +1,14 @@
+{ 
+  "compilerOptions": {
+    "target": "ESNext", 
+    "module": "ESNext", 
+    "moduleResolution": "bundler", 
+    "outDir": "dist", 
+    "strict": false, 
+    "lib": ["ESNext", "DOM"],
+    "paths": {
+      "@vue/*": ["packages/*/src"]
+    },
+    "baseUrl": "./"
+  }
+}
