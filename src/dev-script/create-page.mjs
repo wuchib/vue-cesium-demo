@@ -24,6 +24,7 @@ const pagesRoot = path.resolve(projectRoot, 'src', 'pages');
 const pageDir = path.resolve(pagesRoot, pageName);
 const vueFile = path.join(pageDir, `${pageName}.vue`);
 const typeFile = path.join(pageDir, 'type.ts');
+const configFile = path.join(pageDir, 'config.yaml');
 const componentDir = path.join(pageDir, 'com');
 const hookDir = path.join(pageDir, 'hook');
 
@@ -58,6 +59,14 @@ const typeTemplate = `export interface ${camelToPascal(pageName)}State {
 
 writeFileSync(vueFile, vueTemplate, { flag: 'wx' });
 writeFileSync(typeFile, typeTemplate, { flag: 'wx' });
+writeFileSync(
+  configFile,
+  `title: ''
+icon: ''
+label:''
+`,
+  { flag: 'wx' },
+);
 
 ['.gitkeep'].forEach((fileName) => {
   writeFileSync(path.join(componentDir, fileName), '', { flag: 'wx' });

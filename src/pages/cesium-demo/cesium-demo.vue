@@ -8,7 +8,20 @@ const pitch = ref<number>(0);
 const roll = ref<number>(0);
 
 onMounted(async () => {
-  const viewer = new Cesium.Viewer('cesiumContainer');
+  const viewer = new Cesium.Viewer('cesiumContainer', {
+    // Hide default Cesium widgets for a cleaner canvas
+    animation: false,
+    timeline: false,
+    geocoder: false,
+    homeButton: false,
+    sceneModePicker: false,
+    baseLayerPicker: false,
+    navigationHelpButton: false,
+    fullscreenButton: false,
+    infoBox: false,
+    selectionIndicator: false,
+  });
+  (viewer.cesiumWidget.creditContainer as HTMLElement).style.display = 'none';
   const { latitude, longitude } = await getCurrentPosition();
   registerMouseEvent(viewer);
   loadMap(viewer);
@@ -79,18 +92,14 @@ function loadMap(viewer: Cesium.Viewer) {
 
 <template>
   <div id="cesiumContainer">
-    <div class="camera-info">
-      <span>heading: {{ heading }}</span>
-      <span>pitch: {{ pitch }}</span>
-      <span>roll: {{ roll }}</span>
-    </div>
+    
   </div>
 </template>
 
 <style scoped>
 #cesiumContainer {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 

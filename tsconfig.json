@@ -7,8 +7,11 @@
     "strict": false, 
     "lib": ["ESNext", "DOM"],
     "paths": {
-      "@vue/*": ["packages/*/src"]
+      "@vue/*": ["packages/*/src"],
+      "@/*": ["src/*"]
     },
-    "baseUrl": "./"
-  }
+    "baseUrl": "./",
+    "types": ["vite/client"],
+  },
+  "include": ["src", "uno.d.ts"]
 }

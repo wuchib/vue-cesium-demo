@@ -1,13 +1,15 @@
 import type { RouteRecordRaw } from 'vue-router';
+import { generateRoutes } from './auto'
+
+
+export const childrenRoutes: RouteRecordRaw[] = generateRoutes()
 
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'CesiumDemo',
-    component: () => import('../pages/cesium-demo/index.vue'),
-    meta: {
-      title: 'Cesium Demo',
-    },
+    redirect:'/libs-demo',
+    component: () => import('../layout/layout.vue'),
+    children: childrenRoutes,
   },
 ];
 

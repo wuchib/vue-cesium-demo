@@ -1,6 +1,6 @@
 <template>
-  <div class="ui-libs-page">
-    ui-libs page content
+  <div class="libs-demo-page">
+    libs-demo page content
   </div>
 </template>
 
@@ -9,6 +9,6 @@
 </script>
 
 <style scoped>
-.ui-libs-page {
+.libs-demo-page {
 }
 </style>
