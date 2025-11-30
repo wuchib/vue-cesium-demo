@@ -1,6 +1,6 @@
 <template>
-  <div class="flex h-full w-52px p-y-12px">
-    <nav class="flex flex-col justify-between items-center flex-1 flex-col gap-3 bg-[#212121]">
+  <div class="flex h-full w-52px">
+    <nav class="flex flex-col justify-between items-center flex-1 flex-col gap-3 bg-[#212121] p-y-12px">
       <div class="flex flex-col items-center gap-20px">
         <!-- logo -->
         <div class="size-35px rounded-full overflow-hidden">

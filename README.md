@@ -1,5 +1,45 @@
-# Vue 3 + TypeScript + Vite
+﻿# Vue Cesium Demo · 业务 Demo 集合 🎯
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> 本项目用于整理常见 B 端中后台业务场景，每个业务在 `src/pages` 下单独一个 demo 页面，提供简化的 UI 预览和示例代码，便于快速参考和二次开发。
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## 项目目标
+- 📚 汇总典型业务流：登录、权限、列表/报表、审批、导入导出、消息、地图、订单/库存/供应链、财务、客服/工单等。
+- 🧭 每个场景都有可运行 Demo + 关键代码片段，方便直接复制/改造。
+- 🪶 轻量、示意优先：展示核心交互与数据流，弱化样式和重业务逻辑。
+- 🗺️ Cesium/地图相关页面独立封装，示例常见坐标系与可视化能力。
+
+## 页面与命名约定
+- 目录：`src/pages/<business>/index.vue`（或同名 `.ts/.tsx` 伴随逻辑）。
+- 路由：与目录同名，确保菜单/跳转一致；在侧栏/菜单中按业务分组。
+- 预览代码：每个页面提供「示例代码」区域或链接，标注核心组件/数据结构。
+
+## 计划中的 Demo 列表（示例）
+- 🔐 登录与权限：账号/短信/扫码登录，角色/菜单/按钮权限守卫，动态路由示例。
+- 🏠 首页驾驶舱：KPI 卡片、趋势图、告警/待办提示。
+- 📊 通用表格/报表：多条件筛选、列显隐、分页/虚拟滚动、批量操作；导入/导出异步进度示例。
+- 📑 审批流：费用/合同表单，流程节点与条件分支示例，催办/抄送展示。
+- ✉️ 消息中心：站内信、公告，未读/已读切换，企业微信/钉钉推送占位。
+- 🤝 CRM/商机：客户档案、跟进时间线、阶段看板示例。
+- 🧾 订单与结算：下单审批、发货/签收、对账单/发票占位，支付回调示意。
+- 📦 库存与物流：台账、入库/出库/调拨，物流轨迹查询示意。
+- 🛒 采购与供应链：供应商档案、询价/采购单、绩效占位。
+- 💰 财务与费用：预算/报销/借款流程，资金流水列表。
+- 👥 人事与考勤：组织架构树、排班/打卡示意，薪资条占位。
+- 🛠️ 客服与工单：工单创建/分派/SLA 计时，客服对话占位。
+- 🧩 运营配置中心：活动/优惠券配置，开关/灰度示意。
+- 🗺️ 地图与 Cesium：选址/围栏/轨迹回放，POI 搜索，坐标系转换封装。
+- 🛡️ 安全与合规：水印、防截屏提示，敏感字段脱敏示意。
+
+## 实现提示
+- 组件基座：通用表格、搜索栏、表单、弹窗/抽屉、上传、地图选点组件优先复用。
+- 数据模拟：使用本地 mock/fixtures 保持可运行；重要接口留出占位与接口契约说明。
+- 代码可读性：在每个页面顶部简述业务场景与交互流程；关键逻辑用简短注释标注。
+- 体验：按需加载、路由懒加载；列表可使用虚拟滚动示例。
+
+## 目录导览
+- `src/pages/`：业务 demo 页面。
+- `src/layout/`：菜单/布局，按业务分组展示路由。
+- `src/components/`：可复用的基础/业务组件。
+- `src/pages/cesium-demo/`：Cesium 示例页面与封装。
+
+欢迎根据优先级选择要先落地的 demo 场景，我可以继续补充对应页面的代码骨架与示例数据结构。
