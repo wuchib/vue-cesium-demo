@@ -7,7 +7,7 @@ export const childrenRoutes: RouteRecordRaw[] = generateRoutes()
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect:'/libs-demo',
+    redirect:'/libs',
     component: () => import('../layout/layout.vue'),
     children: childrenRoutes,
   },

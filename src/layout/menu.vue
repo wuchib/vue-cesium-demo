@@ -55,6 +55,7 @@ const menuList = ref<any[]>(childrenRoutes.map(item => ({
 
 
 const linkList = ref([
+  { label: 'about', value: 'about', icon: 'i-ri:contacts-line',  },
   { label: 'github', value: 'github', icon: 'i-ri:github-line',  },
 ])
 </script>

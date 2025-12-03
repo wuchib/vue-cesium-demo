@@ -1,6 +1,6 @@
 <template>
-  <div class="canvas-page">
-    收录有趣的canvas<br>
+  <div class="book-page">
+    书籍推荐<br>
   </div>
 </template>
 
@@ -9,6 +9,6 @@
 </script>
 
 <style scoped>
-.canvas-page {
+.book-page {
 }
 </style>

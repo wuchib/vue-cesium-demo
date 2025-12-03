@@ -10,6 +10,7 @@ export function generateRoutes() {
   type PageMetaConfig = {
     title?: string
     icon?: string
+    sort?: string
   }
 
   const pascalCase = (value: string) =>
@@ -42,7 +43,7 @@ export function generateRoutes() {
 
       if (!value) return
 
-      if (key === 'title' || key === 'icon') {
+      if (key === 'title' || key === 'icon' || key === 'sort') {
         result[key] = value
       }
     })
@@ -72,11 +73,16 @@ export function generateRoutes() {
         meta: {
           title: metaTitle,
           ...(metaIcon ? { icon: metaIcon } : {}),
+          sort: config.sort
         },
       }
     })
     .filter((route): route is RouteRecordRaw => route !== null)
-    .sort((a, b) => a.path.localeCompare(b.path))
+    .sort((a, b) => {
+      const bNum: number = Number(b.meta.sort)
+      const aNum: number = Number(a.meta.sort)
+      return aNum - bNum
+    } )
 
   return routes
 }
